@@ -13,10 +13,15 @@
 % The Project Description should outline the general plan of work, 
 % including the broad design of activities to be undertaken, and, 
 % where appropriate, provide a clear description of experimental 
-% methods and procedures. Proposers should address what they 
-% want to do, why they want to do it, how they plan to do it, how 
-% they will know if they succeed, and what benefits could accrue
-% if the project is successful. The project activities may be based
+% methods and procedures. Proposers should address 
+
+% what they want to do,
+% why they want to do it,
+% how they plan to do it,
+% how they will know if they succeed,
+% and what benefits could accrue if the project is successful.
+
+% The project activities may be based
 % on previously established and/or innovative methods and approaches,
 % but in either case must be well justified. These issues apply to 
 % both the technical aspects of the proposal and the way in which
@@ -24,7 +29,35 @@
 
 \section{Mining Pre-Exposure Prophylaxis Trends in Social Media}
 
-Propose research on PrEP and what additional steps can be taken and how you will know if you succeed and how this benifits society etc..
+Pre-Exposure Prophylaxis (PrEP) is a recently developed method for the prevention of Human Immunodeficiency Virus (HIV) via the administration of an oral pharmaceutical trade named Truvada. Truvada contains active ingredients tenofovir and emtricitabine, both nucleotide reverse transcriptase inhibitors (NRTIs). In the last four years, since Truvada was approved for PrEP in 2012, PrEP has show demonstrated efficacy at preventing HIV for HIV negative individuals in serodiscordant relationships\cite{liu2014early}.
+
+Inital studies of PrEP have shown that it is highly effective\cite{golub2013efficacy}, however because it is still a new treatment, it is facing a number of medical and social obstacles before it reaches full adoption. Incomplete clinical and patient understanding, social stigma, and uncertain insurance status have been identified as challenges preventing continued adoption\cite{calabrese2015stigma}. Also, since Truvada is an oral NRTI, it must be taken daily. Cases when patients do not adhere to their full prescription have led to loss of viral protection, some patients and clinicians worry that lack of adherence could lead to increased risk of infection with drug resistant strains\cite{arnold2012qualitative}.
+
+In order to identify factors that lead to the direct mitigation of HIV infection, we would like to be able to access direct medical data, however doing so can be difficult due to privacy regulations. Additionally, medical data often does not contain direct unfiltered opinions and feedback which capture patient and public perception. For this reason we propose the use of social media as one of our principle sources of data. Though we have investigated the use of multiple social media platforms including Facebook, Grindr, Reddit and Twitter, we have focused primarily on the use of Twitter for past projects and intend to use Twitter for future analyses. Twitter is especially useful because in addition to textual data, various useful metadata is also available including datetime, geolocation, username, hastags, and external hyperlinks. We have used many of these metadata attributes in previous analyses and will continue to do so in future analyses. Twitter also features a convenient well documented and fee API and has over 300 million monthly active users.
+
+In past analyses we collected over 1 million tweets from the Twitter streaming API filtered on PrEP and HIV related keywords. By using embedding techniques such as Word2Vec and Doc2Vec, we were able to identify new keywords and hashtags that are relevent to the PrEP conversation on Twitter including unexpected political conections "NancyReagan" and popular hashtags associated with PrEP that might not have been known to researchers in advance such as "\#whereisprep". In addition Doc2Vec allows us to query the top N tweets related to a given hashtag or the top N users related to a given hashtag. This allowed us to identify a small subset of structurally important tweets that can be human-read without reading the full dataset. Reading these tweets uncovered important blog articles describing some of the fears of drug resistant forms of HIV that could result from misuse of PrEP medications. The linked blog articles that we found also highlight the usefulness of the hyperlink metadata embedded in tweets. Through these hyperlinks, Twitter acts as an index, providing indirect access to a much larger external social media ecosystem.
+
+Our Doc2Vec results also allowed us to identify the top N users most relevant to PrEP. By querying the Twitter REST API for these users' timelines, and using topic modeling methods like Latent Dirichlet Analysis (LDA), we identified the word-distribution topics present in the Twitter conversation. This analysis went beyond the simple keyword identification analysis from Word2Vec since it clustered keywords into topics and it operated on all tweets that PrEP-related users tweeted, not just PrEP related tweets. The LDA results showed a variety of related concerns such as other sexually transmitted diseases, LGBT related topics, health insurance and political topics. Neither PrEP or Truvada were present in the top 30 keywords related to HIV/AIDS demonstrating that PrEP is still a nascent rare topic in the online discussion. An extension to LDA, Dynamic Topic Modeling (DTM), was able to capture topic and word frequency over time. The DTM results showed that the keyword "PrEP" is increasing in relative frequency over time, even relative to related words such as "pill", "prevention" and "drug". This demonstrates increased interest in PrEP which may correlate with an increase in PrEP adoption over the data acquisition period.
+
+Using an open dataset of tweets which were labeled with binary sentiment labels, we performed a sentiment analysis. This analysis allowed us to identify N PrEP related tweets with the highest sentiment, and N PrEP tweets with the lowest sentiment. After performing the automated sentiment analysis, a human was added into the loop to quickly read the top positive and negative tweets to get a sense of the successes and issues present in public perception. In the positive tweets we found hyperlinks to blogs with positive firsthand accounts from individuals successfully using PrEP to stay HIV negative. We also found concerns of whether Truvada can protect against drug resistant strains of HIV. Together these approaches and results show that we can take raw text and metadata and extract keywords, hastags, temporal trends, and sentiment information. Doc2Vec and sentiment classification allow the researcher to extract a set of the N most highly relevant tweets from a large corpus that can be easily human-readable.
+
+- Future analyses
+  - incorporate medical data sources
+  - incorporate additional twitter data
+  - incorporate new social media platforms
+  - do twitter social network analyses to determine flow of information through social network
+  - Determine why patients stop adhering to PrEP
+  - Identify important trends in geolocation data
+
+- How do you know it's successful?
+  - Decrease the spread of HIV
+
+- What benefits will accrue if successful?
+  - general application of biosurveillance
+  - general application of gathering social feedback to a product or treatment
+
+
+
 
 \section{Arvind's secion (to be decided)}
 
