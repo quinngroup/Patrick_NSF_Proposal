@@ -29,8 +29,6 @@
 
 \section{Mining Pre-Exposure Prophylaxis Trends in Social Media}
 
-- Needs more public health prep discussion, and link to biosurveilence or overall goals
-
 Pre-Exposure Prophylaxis (PrEP) is a recently developed method for the prevention of Human Immunodeficiency Virus (HIV) via the administration of an oral pharmaceutical trade named Truvada. Truvada contains active ingredients tenofovir and emtricitabine, both Nucleotide Reverse Transcriptase Inhibitors (NRTIs). In the last four years, since Truvada was approved for PrEP in 2012, PrEP has shown demonstrated efficacy at preventing HIV for HIV negative individuals in serodiscordant relationships\cite{liu2014early}. Though existing methods of effective HIV prevention exist, data shows that they may not be used in case of unexpected sexual contact or personal preference\cite{taylor2016life}. 
 
 Initial studies of PrEP have shown that it is highly effective\cite{golub2013efficacy}, however because it is still a new treatment, it is facing a number of medical and social obstacles before it reaches full adoption. Incomplete clinical and patient understanding, social stigma, and uncertain insurance status have been identified as challenges preventing continued adoption\cite{calabrese2015stigma}. Also, since Truvada is an oral NRTI, it must be taken daily. Cases where patients do not adhere to their full prescription have led to loss of viral protection, and some patients and clinicians worry that lack of adherence could lead to increased risk of infection with drug resistant strains\cite{arnold2012qualitative}.
@@ -93,7 +91,6 @@ Truvada specific & ``I think I have conjunctivitis unless truvada cured it overn
 \label{tbl:neg}
 \end{table*}
 
-
 Though our previous research on data mining social media has uncovered important tweets, keywords, sentiments and hashtags related to the Twitter discussion of PrEP, many important questions remain poorly understood. One important issue is determining why patients stop adhering to their PrEP medication. While our LDA results uncovered "stigma" and other related keywords, and some of the critical tweets we identified described uncertainty in the efficacy of PrEP, this question still remains to be fully answered. One of the challenges with using Twitter as a data source is that we cant verify ground truth labels on the people authoring the tweets. For example we don't know if they are taking Truvada, or whether they are HIV negative or positive, or other important details of their medical status. By incorporating direct medical data we can identify connections between sentiment and written opinions with more concrete medical outcomes.
 
 Other extensions to our previous analysis could include the investigation of additional diseases or behaviors that could correlate with risk of developing HIV. One of the overall goals of biosurveilance is to predict disease outbreaks before they happen in order to intervene preventatively. An outbreak in Scott county Indiana in early 2016 was thought to have been caused by drug usage. In a town of 4,000 people 135 people were diagnosed with HIV, and about 80\% of those diagnosed were codiagnosed with hepatitis C. In theory some online social activity may have been able to indirectly identify this outbreak before it happened\cite{conrad2015community}. In order to identify and predict these hot-spots we can make use of the geolocation metadata, and also do network analyses to identify subgroups, and how information and via inference, social interactions propagate through these subgroups. Some first steps along these lines have already been made by our collaborators \cite{young2014methods}.
@@ -133,10 +130,7 @@ Ultimately in addition to building embedding and arbitrary tensor operations to 
 
 By using our newly developed algorithm to do embedding or sentiment classification on textual twitter data, we can perhaps uncover new trends and mechanisms underlying the spread of disease. This would help facilitate the growing need for data analysis mechanisms in the biological and medical sciences\cite{cichocki2014era}. Ultimately we will use these new methods to predict disease outbreaks, prevent disease, and identify social issues and concerns surrounding existing diseases and treatments with the goal of improving the social outcomes in addition to medical outcomes for patients.
 
-
 \section{Using machine learning to determine user personality associated with disease and treatment responses}
-
-- Needs more psychology
 
 For the third section of this proposal, I would like to extend biosurveillance measures to other disease/treatment combinations that were not covered in the PrEP section, and also take into account social network connectivity (number of followers and followees), and other forms of media related to social profiles such as images. Connectivity is important in part due to its association with certain personality traits. Previous research in psychology has determined that certain narcissistic personality traits correlate with connectivity in social networks\cite{buffardi2008narcissism}. In this section we propose an exploration of whether personality traits correlate with disease/treatment discussions in social media.
 
@@ -150,9 +144,11 @@ I want to use a variety of simplistic models such as linear regression and decis
 
 Taking additional advantage of metadata available in tweets, we can determine if there are any correlations or relevant summary statistics that correlate between disease or personality variables. Given two personality types or two sets of positive or negative disease-related tweets, we can measure the most frequent domain name prefixes in the hyper links. We can also measure if there are non-random temporal or spacial (using geolocation metadata) distribution of these tweets relative to some background distribution (hence the need for a set of background tweets).
 
+A final goal that we want to explore is the phenominon of hoaxes or fake news. With the advent of the internet and various social media platforms, news can spread quickly from unvetted sources. This has produced an issue of missinformation, including missinformation that is deliberatly spread to gain clicks or spread discrediting information. Some research has shown that spread of hoaxes can be modeled using ecological infection models\cite{tambuscio2015fact}. Recent research has used supervised machine to classify reviews as authentic or fake\cite{banerjee2015using} by using simple models (logistic regression, decision tree, naive bayes, etc.). It may be possible to use more complicated models, such as deep learning models and network-based models, to identify fake news in twitter public health data. This will likely require aquisition of a dataset that has labeled tweets of positive or negative news. If successful, this work would be significant on its own, and it would also help ensure our other biosurvelience research is resistent to fake news biases.
+
 If successful, this research would help public health officials determine the interactions between social media network connectivity, infectious disease, and personality traits. This would continue to inform our understanding developed from research described in section 1 that attempts to determine the social aspects relevant to disease treatment outcomes.
 
-\required{Broader Impacts}
+% \required{Broader Impacts}
 % As in the project summary, broader impacts of the proposed work
 % must be called out separately in the project description.  
 % You may be able to give more specific examples, 
