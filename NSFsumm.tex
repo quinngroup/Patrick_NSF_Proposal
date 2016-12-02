@@ -9,30 +9,21 @@
 % and a statement of objectives and methods to be employed.
 % It should look something like an abstract. 
 
-In this document the PIs describe an approach to identify trends in disease treatment by applying existing and novel machine learning techniques. Data sources will include both direct clinical sources and also pertinent text and metadata acquired from users of social media. High level information, analytical tools, and data resources produced through these analyses will be disseminated back into both clinical and social media venues to improve patient's direct medical outcomes and address social concerns. One specific application will focus on the use of antiretroviral therapy to preventatively treat individuals who are at-risk for HIV infection. This use of antiretroviral therapy is referd to as Pre-Exposure Prophylaxis (PrEP) and uses the small molecule nucleotide reverse transcriptase inhibitor trade named Truvada.
+In this document the PIs describe an approach to identify trends in disease treatment by applying existing and novel machine learning techniques in the field of biosurveillance. Biosurveillance is a combination of public health and data science that uses data mining to identify and monitor disease outcomes and treatments to improve public health. Data sources will include text, images, and metadata associated with social media, and will perhaps link these data with direct medical data. High level information, analytical tools, and processed data produced through these analyses will be disseminated back into both clinical and social media venues to improve patient's medical outcomes and address social concerns. While we will collaborate with public health and psychology collaborators, the focus of our work will primarily be on the data science side of the biosurveillance field.
 
-\required{Intellectual Merit}
+Our efforts in biosurveillance will be addressed in three sections:
+
+\required{Section1: Mining Pre-exposure Prophylaxis trends in social media}
+One specific application will focus on the use of antiretroviral therapy to preventatively treat individuals who are at-risk for HIV infection. This use of antiretroviral therapy is referred to as Pre-Exposure Prophylaxis (PrEP) and uses the small molecule nucleotide reverse transcriptase inhibitor trade named Truvada. PrEP is highly effective at preventing HIV, but because it is a new treatment there remain some social and medical obstacles preventing it from achieving its full potential. In this section we use various supervised and unsupervised text mining techniques to identify relevant keywords, hashtages, positive tweets and negative tweets in Twitter data that can be used to gain insight into the social concerns surrounding PrEP adoption. By addressing these concerns, we can make PrEP more effective and improve HIV prevention efforts.
+
+\required{Section2: Semi supervised learning and operations on arbitrary dimension tensors}
+In order to facilitate our biosurveillance work, we will develop and implement useful computational methods that can run on heterogeneous hardware. Graphical Processing Units (GPUs) have a theoretical computing output at least an order of magnitude more than a similarly priced CPU. By adopting GPU computing hardware we may be able to scale up existing data mining analyses, and still have them run in a reasonable amount of time. One such example, which would be relevant to text mining and biosurveillance in general, would be a higher order version of the word2vec algorithm implemented for the GPU. In this section we propose this and other similar analyses.
+
+
+\required{Section3: Using machine learning to determine user personality types associated with disease and treatment responses }
+
+Previous research implies that personality type plays an important role in social media interaction dynamics. Specifically, narcissistic personalities tend to be over represented in the highly connected nodes of a social network. In order to understand the social issues surrounding disease treatment, it would be helpful to determine if certain personality types are more likely to react positively or negatively to certain disease treatments. We will use a variety of supervised methods (such as regression) to determine if there are associations between personality type and disease treatment sentiment. In addition we want to take advantage of additional forms of metadata, to see if they correlate with either disease treatment or personality, such as profile picture, network connectivity, geolocation, and embedded URLs in comments. In applicable cases we want to be able to distinguish between valid information and "hoaxes" to protect our analyses from biases due to deliberate misinformation.
+
 % This should describe the potential of the proposed activity
 % to advance knowledge in the field of mathematics. 
 The information produced through data mining and machine learning will be useful to provide clinicians and public health professionals feedback concerning successes and challenges associated with disease treatments. Pertinent tools and summary datasets will also be produced and made available to researchers. In addition novel applications of machine learning and data science methods will be developed as necessary, and shared with the data science community to assist and inspire related applications in other domain areas.
-
-\required{Broader Impacts}
-% This should describe the potential of the proposed activity
-% to benefit society and contribute to the achievement of 
-% specific, desired societal outcomes.
-% Examples of Broader Imacts include, but are not limited to:
-% 1. Full participation of women, persons with disabilities, and 
-% underrepresented minorities in science, technology, engineering, 
-% and mathematics (STEM); 
-% 2. Improved STEM education and educator 
-% development at any level; 
-% 3. Increased public scientific literacy 
-% and public engagement with science and technology; 
-% 4. Improved well-being of individuals in society; 
-% 5. Development of a diverse, globally competitive STEM workforce;
-% 6. Increased partnerships between academia, industry, and others; 
-% 7. Improved national security; 
-% 8. Increased economic competitiveness of the US; 
-% 9. Enhanced infrastructure for research and education.
-
-The proposed research will contribute to an increased scientific literacy through collaborations and dissemination of our findings through social media. This research will also lead to improvements of the health of all Americans, with in some cases such as PrEP, special emphasis on underrepresented groups such as the LGBT community. This work also has the potential to engage collaborations and partnerships between the social media industry, medical providers and pharmaceutical companies, and academia as we come together to improve public health.
