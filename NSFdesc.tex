@@ -109,23 +109,40 @@ Though our previous research on data mining social media has uncovered important
 There are many ways that we can continue to analyze social media data to identify specific issues impeding HIV prevention efforts. One extension we propose is to investigate additional diseases or behaviors that could correlate with risk of developing HIV. One of the overall goals of biosurveilance is to predict disease outbreaks before they happen in order to intervene preventatively. An outbreak in Scott County Indiana in early 2016 was thought to have been caused by drug usage. In a town of 4,000 people 135 people were diagnosed with HIV, and about 80\% of those diagnosed were codiagnosed with hepatitis C. In theory some online social activity may have been able to indirectly identify this outbreak before it happened\cite{conrad2015community}. In order to identify and predict these hot-spots we can make use of the geolocation metadata, and also do network analyses to identify subgroups, and how information and via inference, social interactions propagate through these subgroups. Some first steps along these lines have already been made by our collaborators \cite{young2014methods}, who used drug-related terms to predict HIV prevalence at the county level. 
 
 % use mentions of PrEP to predict Hepatitus prevalence
-In order to extend this work, we could use the presence of other disease keywords known to coinfect with HIV as a basis for predicting HIV prevalence. This proposal is facilitated since we already have a Twitter corpus that contains tweets mentioning HIV, hepatitis B and C and about 30 other infectious diseases. Searching the HIV literature shows that the use of Twitter mentions of Hepatitis C (codiagnosed at a rate of 80\% in Scott County) and/or other STDs to predict HIV prevalence are lacking. Investigation of the Hepatitis-HIV connection is also particularly important because it allows us to test the concern that we identified in our previous work, that overuse, or misuse of PrEP could lead to increased prevalence of Hepatitis C. One way to test and measure this criticism of PrEP, would be to try to predict Hepatitis C prevalence using mentions of PrEP on Twitter at a county level. If this prediction succeeds, then we have evidence that confirms and quantifies this criticism, and can seek to address how PrEP is administered to prevent coinfection with Hepatitis, however if this prediction fails, we have shown that PrEP is indeed not leading to increased levels of Hepatitis, and thus we will have strengthened the case for PrEP adoption.
+In order to extend this work, we could use the presence of other disease keywords known to coinfect with HIV as a basis for predicting HIV prevalence. This proposal is facilitated since we already have a Twitter corpus that contains tweets mentioning HIV, hepatitis B and C and about 30 other infectious diseases. Searching the HIV literature shows that the use of Twitter mentions of Hepatitis C (codiagnosed at a rate of 80\% in Scott County\cite{scottcountyhepc}) and/or other STDs to predict HIV prevalence are lacking. Investigation of the Hepatitis-HIV connection is also particularly important because it allows us to test the concern that we identified in our previous work, that overuse, or misuse of PrEP could lead to increased prevalence of Hepatitis C. One way to test and measure this criticism of PrEP, would be to try to predict Hepatitis C prevalence using mentions of PrEP on Twitter at a county level. If this prediction succeeds, then we have evidence that confirms and quantifies this criticism, and can seek to address how PrEP is administered to prevent coinfection with Hepatitis, however if this prediction fails, we have shown that PrEP is indeed not leading to increased levels of Hepatitis, and thus we will have strengthened the case for PrEP adoption. Quantification of the predictability of the Hepatitis C connection would help potential patients and clinicians determine the benefits and risks associated with using PrEP as the primary HIV protection method.
 
 Finally, we would like to mention that our quantitative approaches and computational pipelines for mining qualitative sentiments surrounding disease treatment provide an important contribution by themselves to the larger data science community. In our previous work we have shown a specific application where we mine social sentiment to identify what is working and what the challenges are for PrEP, but a similar framework could easily be taken and applied to improve the social barriers surrounding some other disease treatment like cancer and chemotherapy. Pharmaceutical companies, academic researchers, and hospitals can use our open source code with minimal modification to monitor their disease and treatment of interest to monitor and improve the outcomes and happiness of their patients. We anticipate that the computational approaches produced during the course of the proposed work will also demonstrate useful methods that can be applied to other areas of public health research.
 
 
 \section{Combining Social Media and Phylogenetic information to infer HIV outbreak dynamics}
 
-Is there any medical evidence (clinical trail approved or not) of Truvada protecting against Hepatitus C?
+% background info
 
-% use proposed work subsection as above (maybe even some previous work, ie mention your skills in phylogenetics)
+Public health research has recently made use of genomic sequencing evidence to infer patterns in how diseases spread. By collecting and sequencing pathogens, researchers can determine the serotype infecting the individual. The serotype can aid in identifying the origin of the infection, and tailor the choice of specific disease treatments. In the case of HIV, 
+
+ Previous work used HIV genomic data taken from a population of infected individuals in the San Diego regional area
+ 
+% talk about serotype
+
+% talk about drug resistent forms of HIV and their genomic features, and their drug treatment requirments
+
+% talk about HAART
+
+% talk about infering pylogenetic maps of infection
 
 % follow the Hawaii Paper for inspiration
 
 \subsection{Proposed work}
 
-% add description of proposed future work infering HIV spread via genomic data
-% move this to section 2 and expand with background and more proposal details
+% address how we will get data
+
+% address how we will determine in social media between HAART and non-HAART HIV treatments being discussed
+
+% address the methods we will use to determine the drug resistance of the sequencing strains in our data
+
+% address how we will link medical sequencing data and social media data.
+
+
 The second specific extension to our previous work that we make, is the use of genomic methods to help determine the network spread of HIV. Genomic evidence such as pylogenetic trees/networks can be used to determine a specific path of virus spreading through a community. A recent study of the San Diego regional heath system reviewed sequencing data collected from patients diagnosed with HIV over a period from 1996 to 2011\cite{little2014using}. Without any epidemiological patient-patient contact information, the researchers inferred a patient-patient network infection model. The authors do not provide details, but imply that a multiple sequence alignment, followed by some measure of sequence-distance was used to infer the phylogenic network.
 
 If we had access to a similar regional genomic dataset, we could infer a similar phylogenic network on anonymized patient data in a different region of interest such as the north Georgia area. Coupling such an analysis with an investigation of social media at the same time and geographical location would produce a hybrid approach to identify the connections between HIV transmission and HIV social media discussion. To our knowledge at the writing of this proposal, no single study has incorporated both an HIV transmission phylogeny and an investigation of HIV on social media. If successful this combined approach could show more directly how a regional outbreak is captured in social media. This proposal can fail most clearly due to lack of access to genomic sequence data, though such genomic sequence data does not need to be associated with personally identifying information. This removes the need for HIPPA procedures, or medical review board approval making this proposal relatively feasible. Also, the author has used phylogenic methods in the past, further facilitating the feasibility of this approach.
