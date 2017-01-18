@@ -116,12 +116,36 @@ Finally, we would like to mention that our quantitative approaches and computati
 
 \section{Combining Social Media and Phylogenetic information to infer HIV outbreak dynamics}
 
-% background info
+Our previous work mentioned in section 1 of this proposal relied exclusively on social media data, which prevented us from quantifying direct medical outcomes of how sentiment affects PrEP usage and HIV protection. Specifically, we uncovered concerns of drug resistant strains of HIV, which PrEP would not provide protection for, and concerns about the spread of other diseases, such as Hepatitus C, as a result of improper use of PrEP. Previous work on small clinical cohorts in San Francisco, 2 Hepatitis C infections among 485 PrEP patients, has quantified the incidence rate at 0.7 per 100 patient years\cite{volk2015incident}. Work based on simulation has predicted that use of PrEP may lead to an increase in drug resistant HIV by 9-40\%\cite{abbas2011factors}. In order to test and quantify these concerns, we need medical data, and in order to be most relevant to our local medical region, that data should come from the north Georgia medical system.
 
-Public health research has recently made use of genomic sequencing evidence to infer patterns in how diseases spread. By collecting and sequencing pathogens, researchers can determine the serotype infecting the individual. The serotype can aid in identifying the origin of the infection, and tailor the choice of specific disease treatments. In the case of HIV, 
+Though we are not aware, from searching the medical and scientific literature, of genomic and epidemiological data being collected from HIV patients in the north Georgia area, we do know of a study conducted in San Diego\cite{little2014using} and Chicago\cite{morgan2017hiv}, that used HIV genomic sequence data from 478 infected individuals to infer a phylogenetic infection network. These researchers also associated epidemiological data, such as age, sex, risk factors, cell count, and viral load with the phylogenetic infection networks, see figure\ref{fig:phylogenetic}. By examining the genomic information, these researchers were able to identify the incidence of drug resistant forms, and how HIV subtypes spread in the local area over the collection period. The SanDiego study examined the affect of anti-retroviral therapy (ART) on the propensity to generate an infection, finding significantly less transmission when ART was started within the first 12 months. The Chicago study found that HIV transmission happened sporadically throughout the city with no correlation to the individual's region of residence implying that transmission encounters happen far from home. Together, these two studies give information on the factors and aspects driving HIV transmission, and the efficacy of certain treatments, though since these studies were performed prior to Truvada's FDA approval in 2012 (1996-2011 and 2005-2011 respectively), there was no investigation of PrEP.
 
- Previous work used HIV genomic data taken from a population of infected individuals in the San Diego regional area
- 
+% Phylogenetic network
+\begin{figure*}
+\centering
+\includegraphics[height=3in, width=5.0in]{figures/pylo_network.png}
+\caption{Phylogenetic network from San Diego study\cite{little2014using}.}
+\label{fig:phylogenetic}
+\end{figure*}
+
+In both the Chicago and San Diego studies, the pol region of HIV-1 was sequenced as a routine assessment of potential drug resistance. To generate the pylogenetic networks, these sequences were aligned using multiple sequence alignment, and while different pylogentics software was used in the two papers, both papers used a cutoff of 1.5\% genetic sequence distance to determine an edge connection between individuals. Date of infection was able to determine, in many cases, a directionality for edges in the transmission network.
+
+\subsection{Proposed work}
+
+To our knowledge, no one has yet combined genomic, epidemiological and social media data to infer and quantify the direct medical outcomes of PrEP usage or link social media sentiments surrounding PrEP to direct HIV medical outcomes. Furthermore, we are not aware of any complex HIV network studies being conducted on the population of the northern Georgia. Thus to better understand the effects of PrEP, and quantify the direct risks and concerns surrounding PrEP in the north Georgia region, we propose a project to combine genetic, and epidemiological data with social media data to determine the interactions between PrEP usage, PrEP social media sentiment, and incidence of drug resistant HIV and Hepatitis C.
+
+We will acquire anonymized sequence and epidemiological data for HIV from the north Georgia region, and use standard phylogentic tools to quantify the presence of drug resistant strains and construct a phylogenetic network using methods described in \cite{little2014using}. We will gather the epidemiological and network details, including geolocation trends, individuals gender, race, risk factors and cell counts. A simple linear correlation of all of these variables with keywords from social media, and the corresponding p-value for these correlations, binned by geographical area, would allow us to determine the social media keywords most strongly associated with each of network and epidemiological variables.
+
+% Chicago regions
+\begin{figure*}
+\centering
+\includegraphics[height=3in, width=5.0in]{figures/chicago_regions.png}
+\caption{Regions of Chicago from \cite{morgan2017hiv}.}
+\label{fig:chicago}
+\end{figure*}
+
+One potential issue in this proposal, is how to make connections between individuals' medical information and social media. This is made especially hard since to make such a connection would violate ethical concerns, and also HIPPA privacy laws. How researchers have gotten around this concern is to bin social media and medical patients into geographical regions and then ask what are the differences or correlations between the regions. For example in the Chicago study\cite{morgan2017hiv} the researchers separated the city into regions to compare and determine at-risk locations, see figure\ref{fig:chicago}. This requires that our data be geotagged in some way. Conveniently the Twitter social media that we have is tagged down to the latitude and longitude coordinates, allowing us to bin by county, by city or by state depending on the precision of the geolocation data attached to the medical data.
+
 % talk about serotype
 
 % talk about drug resistent forms of HIV and their genomic features, and their drug treatment requirments
@@ -132,8 +156,6 @@ Public health research has recently made use of genomic sequencing evidence to i
 
 % follow the Hawaii Paper for inspiration
 
-\subsection{Proposed work}
-
 % address how we will get data
 
 % address how we will determine in social media between HAART and non-HAART HIV treatments being discussed
@@ -142,10 +164,13 @@ Public health research has recently made use of genomic sequencing evidence to i
 
 % address how we will link medical sequencing data and social media data.
 
+In addition to linear correlations by geographical area, we also want to propose some more complicated network methods. One such method, would be to use the infection transmission graph to perform spectral clustering on the geographical regions (we use connections between individuals in different regions to infer connections between geographical regions). This produces a clustering of regions by connectivity. We then ask whether these clustered regions are similar by their social media activity. Hypothesis testing by comparing this clustering to a randomized clustering (performed by simulation) would tell us whether or not the connectivity between regions affects their medical or social media attributes. Intra-regional connectivity is another variable that can be correlated with social media terms in the simple linear correlation proposed above. If successful, this research would demonstrate an underlying mechanism, the network interactions, affecting HIV transmission. It has been hypothesized and many simulations have been done predicting the affect of giving transmission hub, high risk individuals PrEP in an effort to prevent HIV for the overall region and this network analysis could provide an more precise empirical result to calibrate those simulations.
 
-The second specific extension to our previous work that we make, is the use of genomic methods to help determine the network spread of HIV. Genomic evidence such as pylogenetic trees/networks can be used to determine a specific path of virus spreading through a community. A recent study of the San Diego regional heath system reviewed sequencing data collected from patients diagnosed with HIV over a period from 1996 to 2011\cite{little2014using}. Without any epidemiological patient-patient contact information, the researchers inferred a patient-patient network infection model. The authors do not provide details, but imply that a multiple sequence alignment, followed by some measure of sequence-distance was used to infer the phylogenic network.
+The primary concern that would threaten this plan would be the inability to acquire data, either because it has not been collected in our geographical region, clinicians are unwilling to collaborate, or some regulatory issue prevents us from gaining access to this data. If this happens, and we are unable to get recent HIV sequence data that would match our social media data by collection dates and locations (our PrEP-related social media data was collected nationwide November 2015-ongoing), one solution would be to request social media data from a date range and location for which HIV genetic and epidemiological data is available.
 
-If we had access to a similar regional genomic dataset, we could infer a similar phylogenic network on anonymized patient data in a different region of interest such as the north Georgia area. Coupling such an analysis with an investigation of social media at the same time and geographical location would produce a hybrid approach to identify the connections between HIV transmission and HIV social media discussion. To our knowledge at the writing of this proposal, no single study has incorporated both an HIV transmission phylogeny and an investigation of HIV on social media. If successful this combined approach could show more directly how a regional outbreak is captured in social media. This proposal can fail most clearly due to lack of access to genomic sequence data, though such genomic sequence data does not need to be associated with personally identifying information. This removes the need for HIPPA procedures, or medical review board approval making this proposal relatively feasible. Also, the author has used phylogenic methods in the past, further facilitating the feasibility of this approach.
+In the scenario that we are still unable to acquire medical and social media data from the same set of dates and geographical location, another thing that we can do is attempt to acquire prescription data instead. Our collaborators have mentioned before that they may be able to acquire prescription data that contains anonymized information on individuals purchasing various prescription drugs. This would not allow us to directly infer transmission networks, or quantify the rate of drug resistant forms of HIV, but it would provide some medical data to associate with social media data. For example we could use the prevalence of HAART therapy as a proxy for drug resistant HIV prevalence, other ART as a proxy for general HIV, and Hepatitis drugs as a proxy for hepatitis. We could link the levels of these prescriptions, with levels of Truvada prescription and social media sentiment keywords over the time period.
+
+
 
 \section{Determining associations between personality and drug perception on social media}
 
